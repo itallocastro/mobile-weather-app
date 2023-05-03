@@ -17,6 +17,7 @@ import {
 } from './styles';
 import moment from 'moment';
 import ScrollView = Animated.ScrollView;
+import {conditionsToImage} from "../../utils/optionsToImages";
 
 interface DailyDataProps {
   weatherData: WeatherModel | null;
@@ -24,7 +25,7 @@ interface DailyDataProps {
 const DailyData: React.FC<DailyDataProps> = ({weatherData}) => {
   const [selected, setSelected] = useState<number>(0);
   return (
-    <Box>
+    <Box rain={weatherData && weatherData.forecast[0].rain_probability > 50}>
       <View style={{padding: 10}}>
         <DailyHeader>
           <TodayText>Today</TodayText>
@@ -33,14 +34,16 @@ const DailyData: React.FC<DailyDataProps> = ({weatherData}) => {
         <HourByHourWrapper>
           <ScrollView horizontal>
             {weatherData?.forecast.map((summaryDay, index) => {
+              // @ts-ignore
+              const imageUrl = weatherData && conditionsToImage[summaryDay.condition] ? conditionsToImage[summaryDay.condition] : require('../../assets/cloudy_sun.png');
               return (
                 <Pressable onPress={() => setSelected(index)} key={index}>
                   <HourByHourContent selected={selected === index}>
                     <ContentText>{summaryDay.max}°C</ContentText>
                     <Image
-                      source={require('../../assets/cloudy.png')}
-                      resizeMode={'cover'}
-                      style={{width: 45, height: 45}}
+                      source={imageUrl}
+                      resizeMode={'contain'}
+                      style={{width: 40, height: 40}}
                     />
                     <ContentText>1{index}.00</ContentText>
                   </HourByHourContent>

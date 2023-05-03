@@ -12,6 +12,7 @@ import {
 } from './styles';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ScrollView = Animated.ScrollView;
+import {conditionsToImage} from "../../utils/optionsToImages";
 
 interface NextForecastProps {
   weatherData: WeatherModel | null;
@@ -19,7 +20,7 @@ interface NextForecastProps {
 const NextForecast: React.FC<NextForecastProps> = ({weatherData}) => {
 
   return (
-    <Box>
+    <Box rain={weatherData && weatherData.forecast[0].rain_probability > 50}>
       <View style={{padding: 10}}>
         <NextForecastHeader>
           <NextForecastText>Next Forecast</NextForecastText>
@@ -32,13 +33,15 @@ const NextForecast: React.FC<NextForecastProps> = ({weatherData}) => {
         <NextForecastWrapper>
           <ScrollView>
             {weatherData?.forecast.map((summaryDay, index) => {
+              // @ts-ignore
+              const imageUrl = weatherData && conditionsToImage[summaryDay.condition] ? conditionsToImage[summaryDay.condition] : require('../../assets/cloudy_sun.png');
               return (
                 <NestForecastContent key={index}>
                   <DayText>{summaryDay.weekday}</DayText>
                   <Image
-                    source={require('../../assets/cloudy.png')}
-                    resizeMode={'cover'}
-                    style={{width: 45, height: 45}}
+                    source={imageUrl}
+                    resizeMode={'contain'}
+                    style={{width: 40, height: 40}}
                   />
                   <View style={{flexDirection: 'row', gap: 10}}>
                     <TemperatureText>{summaryDay.max}°C</TemperatureText>

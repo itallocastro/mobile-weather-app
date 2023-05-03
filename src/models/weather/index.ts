@@ -6,6 +6,7 @@ export interface WeatherModel {
   humidity: string;
   rain: number;
   wind_speedy: number;
+  condition_slug: string;
   forecast: SummaryDay[];
 }
 
@@ -15,7 +16,7 @@ export interface SummaryDay {
   max: number;
   min: number;
   rain: number;
-  rain_probability: string;
+  rain_probability: number;
   description: string;
   condition: string;
 }

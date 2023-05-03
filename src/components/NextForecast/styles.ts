@@ -27,15 +27,16 @@ export const NestForecastContent = styled.View`
   padding: 10px;
 `;
 
-export const DayText = styled(GlobalText)`
+export const BaseText = styled.Text`
+  font-family: 'AlegreyaSans-Medium';
   font-size: 18px;
-  font-weight: 700;
   line-height: 22px;
+`
+export const DayText = styled(BaseText)`
+  font-weight: 700;
+  color: #ffffff;
 `;
 
-export const TemperatureText = styled.Text`
-  font-family: 'Alegreya Sans';
-  font-size: 18px;
-  line-height: 22px;
+export const TemperatureText = styled(BaseText)`
   color: ${(props: {color: string}) => (props.color ? props.color : '#FFFFFF')};
 `;
