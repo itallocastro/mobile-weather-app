@@ -1,37 +1,26 @@
-# Processo seletivo para desenvolvedor mobile
+# Observações gerais
 
-Olá,
+Olá, pessoal! 
+O teste foi realizado utilizando o **react native**. 
+A partir disso, notei que na construção do teste alguns ícones não foram exatamente encontrados como no figma. 
+Contudo, tentei chegar o mais próximo. 
+Além disso, a API fornecida não fornecia os dados hora a hora de forma gratuita. Com isso, eu utilizei os dados de <strong>Next Forecast</strong> para suprir a ausência deles. Portanto, vocês poderão notar que os dados que estão na parte "Today" serão basicamente os mesmos da parte "Next Forecast".
+Ademais, como de imagens maiores só existiam as duas principais nos exemplos, eu só fiz uso delas como imagem principal, porque as imagens menores ficavam com uma resolução bem ruim. Ainda assim, as imagens pequenas foram utilizadas nas outras partes dos componentes.
+Por fim, em relação ao background das telas eu imaginei que tivesse relação com a possibilidade ou não de chuva no dia corrente. 
+A partir disso, foi feita a lógica para mudança de background, se houver > 50% de chance de chuva ele fica mais escuro, caso contrário fica mais claro. 
 
-Estamos em busca de pessoas que gostem de tecnologia e queiram fazer parte da nossa equipe de desenvolvimento mobile! Se você é um desenvolvedor apaixonado por novas tecnologias, que gosta de trabalhar em equipe e tem vontade de aprender, então essa é a sua chance.
+## Funcionalidade Adicionada
+- O "Select" está funcional e com algumas opções de cidades para teste.
 
-O processo seletivo é simples, vamos pedir que você desenvolva um aplicativo, para que possamos avaliar seu potencial. A instrução completa esta mais abaixo.
-
-Depois dessa etapa, vamos avaliar todos os candidatos que realizarem a submissão no tempo correto, que serão convidados para uma entrevista final, com parte do nosso time, para discutir os detalhes e forma de  trabalho, basicamente para verificarmos se vai dar "_match_".
-
-Caso seja selecionado, você irá trabalhar em um ambiente descontraído e inovador, com profissionais de alta qualidade e muitas oportunidades de aprendizado. Além disso, terá a chance de participar do desenvolvimento de um projeto inovador na área da educação.
-
-E então, vamos nessa? Mostre para nós que você é o profissional que estamos procurando!
-
-## Instruções
-
-Se você resolveu topar o desafio, vamos lá! Primeiro de tudo, faça o **fork** deste repositório. Você deverá desenvolver um aplicativo de previsão do tempo. O aplicativo pode ser desenvolvidor em [Flutter](https://flutter.dev/) ou [React-Native](https://reactnative.dev/).
-
-O resultado final deverá ser parecido com:
-
-![](images/thumbnail-figma.png)
-
-Esta tela pode ser encontrada neste [Figma Community](https://www.figma.com/community/file/1158928016905524023) criado pela [@becabelin](https://www.figma.com/@becabelin). Claro que uma ou outra coisa pode ser adaptada, mas essa adaptação depois poderá ser questionada na entrevista.
-
-Os dados podem ser consumidos da seguinte [API](https://api.hgbrasil.com/weather). Caso queira utilizar outra, escolha uma aberta e envie as intruções de uso, caso necessário.
-
-Ao fim, altere o `README.md` com instruções para instalação e execução do aplicativo.
-
-Os pontos que serão avaliados:
-
-- fidelidade com o mock
-- funcionalidade
-- organização de componentes
-- organização de commits
-- organização de código
-
-Boa sorte 🍀! Aguardamos sua submissão!
+## Intruções
+- Configurar o ambiente de desenvolvimento: https://reactnative.dev/docs/environment-setup
+- Clonar o repositório.
+- Ter o Node.js instalado, a versão que eu utilizei: **v19.8.1**
+- Acessar o diretório do projeto baixado.
+- Rodar o comando:
+```
+npm install 
+```
+- Ter algum dispositivo(físico ou não) para teste.
+- Rodar npm start
+- Escolher rodar no android ou no iOS (obs: Esse projeto foi desenvolvido com dispositivo android).
