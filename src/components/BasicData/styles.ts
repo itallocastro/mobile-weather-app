@@ -2,14 +2,9 @@
 import styled from 'styled-components/native';
 import {GlobalText} from '../../../styles';
 
-export const Box = styled.View`
-  background-color: rgba(0, 16, 38, 0.3);
-  border-radius: 20px;
-`;
-
 export const Content = styled.View`
   display: flex;
-  padding: 5px;
+  padding: 10px 7px;
   flex-direction: row;
   justify-content: space-around;
 `;

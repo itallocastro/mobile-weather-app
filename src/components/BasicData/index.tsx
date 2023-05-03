@@ -1,8 +1,8 @@
 import React from 'react';
 import {WeatherModel} from '../../models/weather';
-import {Box, Content, ContentItem} from './styles';
-import {Text} from 'react-native';
+import {Content, ContentItem} from './styles';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {Box} from "../../../styles";
 
 interface BasicDataProps {
   weatherData: WeatherModel | null;

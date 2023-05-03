@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 import BasicData from '../../components/BasicData';
 import {Wrapper} from './styles';
 import LinearGradient from 'react-native-linear-gradient';
+import DailyData from "../../components/DailyData";
 const Weather = () => {
   const {getByUserIP, weatherData} = useWeather();
 
@@ -24,6 +25,7 @@ const Weather = () => {
       <Wrapper>
         <Header weatherData={weatherData} />
         <BasicData weatherData={weatherData} />
+        <DailyData weatherData={weatherData} />
       </Wrapper>
     </LinearGradient>
   );
