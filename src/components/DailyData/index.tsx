@@ -5,9 +5,6 @@ import {
   Animated,
   Image,
   Pressable,
-  SafeAreaView,
-  StatusBar,
-  Text,
   View,
 } from 'react-native';
 import {
@@ -30,7 +27,7 @@ const DailyData: React.FC<DailyDataProps> = ({weatherData}) => {
     <Box>
       <View style={{padding: 10}}>
         <DailyHeader>
-          <TodayText>Hoje</TodayText>
+          <TodayText>Today</TodayText>
           <DateText>{moment().format('MMM, D')}</DateText>
         </DailyHeader>
         <HourByHourWrapper>

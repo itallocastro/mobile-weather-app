@@ -1,3 +1,4 @@
+// @ts-ignore
 import styled from 'styled-components/native';
 import {GlobalText} from '../../../styles';
 
